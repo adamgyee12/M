@@ -2,5 +2,5 @@
 
 
 document.onclick = function () {
-  location.href = "https://adamgyee12.github.io/Momentor/landing.html"
+  location.href = "https://adamgyee12.github.io/M/landing.html"
 }
