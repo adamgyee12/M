@@ -1,3 +1,44 @@
+$(document).ready(function () {
+    var number = parseInt($('#mentoractions').text(), 10) || 0; // Get the number from paragraph
+
+
+    // Called the function in each second
+    var interval = setInterval(function () {
+        $('#mentoractions').text(number++); // Update the value in paragraph
+
+        if (number > 10000) {
+            clearInterval(interval); // If exceeded 100, clear interval
+        }
+    }, 4500); // Run every 5 seconds
+});
+
+$(document).ready(function () {
+    var number = parseInt($('#micros').text(), 10) || 0; // Get the number from paragraph
+
+
+    // Called the function in each second
+    var interval = setInterval(function () {
+        $('#micros').text(number++); // Update the value in paragraph
+
+        if (number > 10000) {
+            clearInterval(interval); // If exceeded 100, clear interval
+        }
+    }, 7500); // Run every 5 seconds
+});
+
+$(document).ready(function () {
+    var number = parseInt($('#mentors').text(), 10) || 0; // Get the number from paragraph
+
+
+    // Called the function in each second
+    var interval = setInterval(function () {
+        $('#mentors').text(number++); // Update the value in paragraph
+
+        if (number > 10000) {
+            clearInterval(interval); // If exceeded 100, clear interval
+        }
+    }, 14500); // Run every 5 seconds
+});
 
 var svg = d3.select("svg");
 
@@ -78,6 +119,14 @@ e5 = [25,-8,"I've mentored my neighbor's son a couple of times when he asks me a
 e6 = [52,-10,"I've mentored my neighbor's son a couple of times when he asks me about tough life questions."];
 e7 = [42,-11,"My mentor is a great person who always takes the time to give me answers to tough questions."];
 
+h1 = [-80,32,"It’s hard to describe everything that Julie has meant to me. She helped become the person that I am today."];
+h2 = [-60,5,"Sam, I still carry that moment in my heart, when you sat me down and looked me straight in the eyes and said “John, there is nothing more valuable in your life than your family”."];
+h3 = [-7,0,"I feel blessed that I have had the opportunity in my life to be a positive force other people’s lives and help them grow. "];
+h4 = [-53,17,"I lost my parents in a car accident when I was 13. The odds were stacked against me. It is only thanks to my mentor's support that today I am a father of two."];
+h5 = [-82,-18,"I've mentored my neighbor's son a couple of times when he asks me about tough life questions."];
+h6 = [-30,-8,"I've mentored my neighbor's son a couple of times when he asks me about tough life questions."];
+h7 = [-21,-13,"My mentor is a great person who always takes the time to give me answers to tough questions."];
+
 f1 = [122,-30,"It’s hard to describe everything that Julie has meant to me. She helped become the person that I am today."];
 f2 = [122,-10,"Sam, I still carry that moment in my heart, when you sat me down and looked me straight in the eyes and said “John, there is nothing more valuable in your life than your family”."];
 f3 = [122,0,"I feel blessed that I have had the opportunity in my life to be a positive force other people’s lives and help them grow. "];
@@ -94,9 +143,11 @@ g5 = [95,-34,"My mentor is a great person who always takes the time to give me a
 g6 = [93,-49,"I've mentored my neighbor's son a couple of times when he asks me about tough life questions."];
 g7 = [90,-36,"My mentor is a great person who always takes the time to give me answers to tough questions."];
 
+g8 = [90,-56,"STory TIME"];
+
 
 var projection = d3.geoMercator();
-
+/*
 var lines = svg.selectAll("line");
 lines.data([[a3,a1],[a3,a2],[a4,a5],[a7,a5],[a1,a6],[a2,a5],
   [c1_1,c1_2],[c1_1,c1_3],[c1_1,c1_4],[c1_1,c1_5],[c1_4,c1_6],
@@ -115,18 +166,65 @@ lines.data([[a3,a1],[a3,a2],[a4,a5],[a7,a5],[a1,a6],[a2,a5],
 .attr("y2", function (d) { return projection(d[1])[1]; })
 .transition().duration(1000).delay(4000)
 .style("stroke", "black")  ;
+*/
+
+d3.selection.prototype.moveToFront = function() {
+  return this.each(function(){
+    this.parentNode.appendChild(this);
+  });
+};
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+var data_input = [h1,h2,h3,h4,h5,h6,h7,g1,c1_1,e2,g3,d2,b2,g5,g6,g7,f2,f3,f4,f5,f6,f7,e1,g2,e3,e4,e5,e6,e7,d1,g4,d6,d4,d5,b1,f1,b3,b4,b5,a1,a2,a3,a4,a5,a6,a7, c1_2, c1_3, c1_4, c1_5, c1_6];
+data_input = shuffle(data_input);
+
+var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
 var cirlces = svg.selectAll("circle");
-cirlces.data([g1,g2,g3,g4,g5,g6,g7,f1,f2,f3,f4,f5,f6,f7,e1,e2,e3,e4,e5,e6,e7,d1,d2,d6,d4,d5,b1,b2,b3,b4,b5,a1,a2,a3,a4,a5,a6,a7,c1_1, c1_2, c1_3, c1_4, c1_5, c1_6]).enter()
+cirlces.data(data_input).enter()
 .append("circle")
-.attr("cx", function (d) { return projection(d)[0]; })
-.attr("cy", function (d) { return projection(d)[1]; })
-.attr("r", "0px")
+.attr("cx", 1000)
+.attr("cy", 10)
+.attr("r", "40px")
+.attr("opacity", 0)
+.attr("fill", "yellow")
 .on("mouseover", function(d) {
+  /*
   console.log(d3.select("#quote_content").text());
   d3.select("#quote_content").text(d[2]);
   d3.selectAll(".highlight").classed("highlight",false);
   d3.select(this).classed("highlight",true);
+
+  */
+
+  tooltip.style("left", d3.event.pageX - 150 + "px")
+  .style("top", d3.event.pageY - 200 + "px")
+  .style("opacity", 0)
+  .style("display", "inline-block");
+
+  tooltip.transition().duration(200)
+    .style("left", d3.event.pageX - 150 + "px")
+    .style("top", d3.event.pageY - 100 + "px")
+    .style("opacity", .8);
+  tooltip.html("<h4 class='t5' align='center'>" + (d[2]) + "</h4>");
+
 })
   /*
  div.transition()
@@ -138,6 +236,11 @@ cirlces.data([g1,g2,g3,g4,g5,g6,g7,f1,f2,f3,f4,f5,f6,f7,e1,e2,e3,e4,e5,e6,e7,d1,
      .style("top", (d3.event.pageY - 28) + "px");
    })*/
  .on("mouseout", function(d) {
+   tooltip.transition()
+      .duration(200)
+      .style("top", 0)
+      .style("opacity", 0);
+
    //d3.select(this).classed("highlight",false);
    /*
    div.transition()
@@ -145,15 +248,24 @@ cirlces.data([g1,g2,g3,g4,g5,g6,g7,f1,f2,f3,f4,f5,f6,f7,e1,e2,e3,e4,e5,e6,e7,d1,
      .style("opacity", 0);
      */
    })
-.transition().duration(1000).ease(d3.easeBounce).delay(function(d, i) { return i*75; })
+.transition().duration(2500).ease(d3.easeExp).delay(function(d, i) { return i*5000; })
+.attr("cx", function (d) { return projection(d)[0]; })
+.attr("cy", function (d) { return projection(d)[1]; })
 .attr("r", "7px")
+.attr("opacity", 1)
+.attr("fill", "#FF9F29")
+
+/*
+.transition().duration(3500)
 .attr("fill", function(d){
   if (d[0] == 110){
     return "#eccc09";
   } else {
-    return "#1D0097";
+    return "black";
   }
-});
+})
+*/
+;
 
 
 

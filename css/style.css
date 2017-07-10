@@ -1,3 +1,136 @@
+.toolTip {
+  position: absolute;
+  display: none;
+  min-width: 80px;
+  max-width: 400px;
+  border-radius: 6px;
+  opacity: 0;
+  height: auto;
+  background: none repeat scroll 0 0 #50E3C2;
+  padding: 14px;
+  text-align: center;
+}
+
+.num {
+  font-family: "Assistant";
+  color: #50E3C2;
+  font-size: 60px;
+}
+
+.t1 {
+  font-family: "Assistant";
+  font-size: 18px;
+}
+
+.t2 {
+  font-family: "Assistant";
+  font-size: 12px;
+  color: #000000 !important;
+}
+
+.t3 {
+  font-family: "Assistant";
+  font-size: 18px;
+  color: #000000 !important;
+}
+
+.t4 {
+  font-family: "Assistant";
+  font-size: 16px;
+  color: #000000 !important;
+}
+
+.t5 {
+  font-family: "Assistant";
+  font-size: 14px;
+  color: #000000 !important;
+}
+
+.card_1 {
+  position: absolute;
+  box-shadow: 10px;
+  background-color: #FDC989;
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: .5s
+}
+
+.card_2 {
+  position: absolute;
+  background-color: #FDC989;
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 5.5s;
+}
+
+.card_3 {
+  position: absolute;
+  background-color: #FDC989;
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 10.5s;
+}
+
+.card_4 {
+  position: absolute;
+  background-color: #FDC989;
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 15.5s;
+}
+
+@keyframes example {
+    0%   {
+      background-color: #FDC989;
+      top: 0px;
+      opacity: 0;
+    }
+    2% {
+      opacity: 0;
+    }
+    12.5%  {
+      background-color: #FDC989;
+      opacity: 1;
+      top: 200px;
+    }
+    18% {
+      background-color: #FDC989;
+    }
+    25%  {top: 200px}
+    37.5%  {
+      background-color: #E8EEF2;
+      top: 350px;}
+    50%  {top: 350px;
+    background-color: #E8EEF2;}
+    62.5%  {top: 500px;
+    background-color: #E8EEF2;}
+    75%  {top: 500px;background-color: #E8EEF2;}
+    87.2%  {top: 650px;background-color: #E8EEF2;
+        opacity: 1;}
+    97% {opacity: 1}
+    100%  {top: 650px;background-color: #E8EEF2;
+        opacity: 0;}
+}
+
+.main_content {
+  float: left !important;
+  width: 75% !important;
+}
+
+.sidebar_content {
+  float: right !important;
+  width: 25% !important;
+  padding-right: 10px;
+}
+
 #page0{
   background-image: url("../images/fullscreenbg.png");
 
@@ -31,7 +164,9 @@ h2,h3,h4,h5,h6 {
 }
 
 .highlight{
-  fill: #ECEAF6;
+  fill: #50E3C2;
+  border-radius: 10px;
+  border-color: black;
 }
 
 .scroll{
@@ -49,9 +184,7 @@ h2,h3,h4,h5,h6 {
 
 #page2 {
   /*background-image: url("../images/bg.png");*/
-  background-color: #8075B8;
-  background-size:105%;
-   background-repeat: no-repeat;
+  background-color: #ffffff;
 }
 
 
@@ -67,7 +200,7 @@ h2,h3,h4,h5,h6 {
 
 #quote {
   position: absolute;
-  top: 500px;
+  top: 300px;
   left:50px;
 }
 
@@ -83,13 +216,11 @@ h2,h3,h4,h5,h6 {
 }
 
 #page1 {
-  background-color: #8075B8;
+  background-color: #ffffff;
 }
 
 .jumbotron {
-  background-color: #B6B2C8;
-  border-bottom: 3px;
-  border-color: black;
+  background-color: #FF9F29;
 }
 
 .error {
@@ -102,15 +233,15 @@ h2,h3,h4,h5,h6 {
 }
 
 path {
-  fill: #B6B2C8;
+  fill: #D3DFE7;
 }
 
 .state-path {
-  fill: #B6B2C8;
+  fill: #D3DFE7;
 }
 
 .states {
-   fill: #B6B2C8;
+   fill: #D3DFE7;
     stroke: black;
     stroke-width: .5px;
 

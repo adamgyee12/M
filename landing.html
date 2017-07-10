@@ -35,10 +35,11 @@
   </header>
 
   <!-- Icons and Headers -->
-  <div class="jumbotron">
-    <h1 align="center">
-      <img src="images/Momentor_logo.png"></img>
-    </h1>
+  <div style="background-color: #FF9F29; padding: 20px">
+    <h5 style=" font-family: Assistant; padding-left: 50px; font-size: 36px; color:white;">Magnify Moments
+    </h5>
+
+
     <!--
     <div class="col-md-3">
       <img src="images/momentorlogo.png"></img>
@@ -50,8 +51,38 @@
   </div>
 
     <!-- Page Content -->
-    <div class="container">
-      <h5 align="center" style="color:white;">Welcome to Momentor! Explore mentoring moments acorss the country by hovering over the dots,</h5><h5 align="center" style="color:white;"> and see your personal network by submitting a story!</h5>
+    <div class="main_content container">
+
+
+
+      <div class="col-md-4">
+        <div align="center">
+          <h1 id="mentors" class="num">521</h1>
+          <p class="t1">Unique Mentors</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div align="center">
+          <h1 id="mentoractions" class="num">2245</h1>
+          <p class="t1">Mentoractions</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div align="center">
+          <h1 id="micros" class="num">3698</h1>
+          <p class="t1">Micros Completed</p>
+        </div>
+      </div>
+
+      <!-- Quote
+
+      <div class="main_content container" style="word-wrap: break-word;width: 100px;">
+        <blockquote style="float:left; width: 60%" id="quote">
+          <p class="t3" id="quote_content" style="color:#000000;">Hover over the orange dots to explore stories from others!</p>
+          <small class="t4" style="color:#000000;">Magnify</small>
+        </blockquote>
+      </div>
+       -->
 
         <!-- Map -->
         <div class="row">
@@ -73,24 +104,87 @@
 
     </div>
 
-    <!-- Share Button -->
+    <div class="sidebar_content container">
+      <h5 style="font-family: Assistant; padding-top: 25px; font-size: 14; color:black; text-align: center">Recent Mentoractions</h5>
+
+      <div class="card_1" style="padding: 7px; border-radius: 5px; background-color: black">
+        <div class="card-header t2" style="color:white;">
+        </div>
+        <div class="card-block">
+          <div class="col-md-3">
+            <img align="center" style="padding-top:25px; padding-left: 7px; width:100%;" src="/images/profileicon.png"></img>
+          </div>
+          <div class="col-md-9">
+            <blockquote class="card-blockquote">
+              <p class="t2" style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+              <footer class="t2" style="color:white;">Anonymous from <cite title="Source Title">Location</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="card_2" style="padding: 7px; border-radius: 5px; background-color: black">
+        <div class="card-header" style="color:white;">
+        </div>
+        <div class="col-md-3">
+          <img align="center" style="padding-top:25px; padding-left: 7px; width:100%;" src="/images/profileicon.png"></img>
+        </div>
+        <div class="col-md-9">
+          <div class="card-block">
+            <blockquote class="card-blockquote">
+              <p class="t2" style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+              <footer class="t2" style="color:white;">Anonymous from <cite title="Source Title">Location</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="card_3" style="padding: 7px; border-radius: 5px; background-color: black">
+        <div class="card-header" style="color:white;">
+        </div>
+        <div class="card-block">
+          <div class="col-md-3">
+            <img align="center" style="padding-top:25px; padding-left: 7px; width:100%;" src="/images/profileicon.png"></img>
+          </div>
+          <div class="col-md-9">
+            <blockquote class="card-blockquote">
+              <p class="t2" style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+              <footer class="t2" style="color:white;">Anonymous from <cite title="Source Title">Location</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="card_4" style="padding: 7px; border-radius: 5px; background-color: black">
+        <div class="card-header" style="color:white;">
+        </div>
+        <div class="card-block">
+          <div class="col-md-3">
+            <img align="center" style="padding-top:25px; padding-left: 7px; width:100%;" src="/images/profileicon.png"></img>
+          </div>
+          <div class="col-md-9">
+            <blockquote class="card-blockquote">
+              <p class="t2" style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+              <footer class="t2" style="color:white;">Anonymous from <cite title="Source Title">Location</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Share Button
     <div>
       <a href="#" id="enter_story" class="colored-btn btn btn-primary btn-lg fixed-pos">Share Your Story!</a>
     </div>
+    -->
 
-    <!-- Quote -->
 
-    <div class="container" style="word-wrap: break-word;width: 100px;">
-      <blockquote id="quote">
-        <p id="quote_content" style="color:#ffffff; text-shadow:  1px 1px #000000;">It’s hard to describe everything that Julie has meant to me. She helped become the person that I am today.</p>
-        <small style="color:#ffffff;">MentorByte posted by Anonymous</small>
-      </blockquote>
-    </div>
 
 
     <div class="container" style="padding-bottom: 100px">
     </div>
-    <!-- More Info -->
+    <h5 class="t3" align="center" style="left"><a href="https://adamgyee12.github.io/P2P/">Join the community!</a></h5>
+    <!-- More Info
     <div class="container" style="padding-bottom: 100px">
       <div class="col-md-6" style="color:white; padding-right:50px">
         <h1>What is Momentor?</h1>
@@ -107,6 +201,7 @@
     <div class="container" style="padding-left:50px; padding-right:150px; align:center">
       <p style="color:white">Many people have acted as mentors or have been mentored. However, in many cases, neither the person acting as a mentor or the person being mentored may realize or recognize that mentoring has occurred. Sometimes people involved in mentoring do not actually use the term mentoring and instead describe their relationship as influential, impactful or learning-oriented. Such informal mentoring occurs quite frequently and it is probably wide-spread throughout the world.</p>
     </div>
+    -->
 
 
 
